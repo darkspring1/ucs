@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.5-alpha</Version>
+  </PropertyGroup>
+  
+  
+   <Target Name="PostBuildRelease" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="dotnet nuget push -k %NUGET_API_KEY% &quot;$(TargetDir)..\$(PackageId).$(PackageVersion).nupkg" IgnoreExitCode="true" />
+  </Target>
+
+</Project>

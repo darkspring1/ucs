@@ -1,0 +1,8 @@
+*.vs
+*packages
+*bin
+*obj
+*node_modules
+*.csproj.user
+*.pubxml
+*.pubxml.user
